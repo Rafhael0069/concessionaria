@@ -11,6 +11,19 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'register',
+    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'registration-confirmation',
+    // eslint-disable-next-line max-len
+    loadChildren: () => import('./registration-confirmation/registration-confirmation.module').then( m => m.RegistrationConfirmationPageModule)
+  },
+  {
+    path: 'registration-completed',
+    loadChildren: () => import('./registration-completed/registration-completed.module').then( m => m.RegistrationCompletedPageModule)
+  },
 ];
 
 @NgModule({
